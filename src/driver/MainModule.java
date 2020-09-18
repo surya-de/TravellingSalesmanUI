@@ -1,11 +1,15 @@
 package driver;
-import fileHandling.InteractClient;
+import dataProcessing.ProcessCoordinates;
+import algorithmImplement.NearestNeighbor;
 
 public class MainModule {
 
 	public static void main(String[] args) {
-		InteractClient icObj = new InteractClient();
-		icObj.getRequest();
+		ProcessCoordinates pcObj = new ProcessCoordinates();
+		NearestNeighbor nnObj = new NearestNeighbor();
+		
+		pcObj.initiateInteraction();
+		nnObj.performNearestNeighbor(pcObj.getDistances());
 	}
 
 }
